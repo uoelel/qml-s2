@@ -1,0 +1,254 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+       %%% MODIFIED: unicode-math conflics with expex; mathspects conflicts with glossaries/leipzig
+  \usepackage{fontspec} % \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Arial}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={QML -- Summative Assessment 2},
+  pdfauthor={YOUR EXAM NUMBER},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{QML -- Summative Assessment 2}
+\author{YOUR EXAM NUMBER}
+\date{2023-11-23}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section{Overview}\label{overview}
+
+\textbf{PLEASE READ CAREFULLY}
+
+\textbf{DUE Week 12 - Thu 07 December at noon}
+
+\begin{itemize}
+\tightlist
+\item
+  You must include your \textbf{exam number as the author} in the
+  document preamble above.
+\item
+  Make sure you can render the Rmd file to PDF frequently while
+  completing the assessment to avoid last minute panic!
+\item
+  Be careful with formatting. Make sure there is an empty line after
+  each paragraph and/or code chunk.
+\end{itemize}
+
+\section{Read the data}\label{read-the-data}
+
+\textbf{Instructions}:
+
+\begin{itemize}
+\tightlist
+\item
+  Read the chosen data.
+\item
+  Write below a brief description about the data:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Include the number of observations and the number of columns.
+  \item
+    Identify the variables/columns in the data that will be relevant to
+    answer the research question, their type (categorical or numeric
+    continuous/discrete) and, if categorical, report the levels of the
+    variable.
+  \item
+    Report counts and/or summary measures of the relevant variables plus
+    any other you think might be important to mention (for example, info
+    about participants).
+  \end{itemize}
+\end{itemize}
+
+\section{Plot the data}\label{plot-the-data}
+
+\textbf{Instructions}:
+
+\begin{itemize}
+\tightlist
+\item
+  Now plot the data as you see fit. Remember the research question of
+  the chosen data to help you decide which plots to include.
+\item
+  For each plot, write a brief description as text (include information
+  on the components of the plot like axes, colour, panels etc and
+  briefly describe the patterns you see).
+\item
+  Plotting the data is a good way of familiarising yourself with it, so
+  that when it comes to modelling you have a better sense of what the
+  data looks like!
+\item
+  \textbf{Include at least 3 plots}.
+\end{itemize}
+
+\section{Model the data}\label{model-the-data}
+
+\textbf{Instructions}
+
+\begin{itemize}
+\tightlist
+\item
+  Finally, model the data and write a model report.
+\item
+  Pick a model formula that will help you answer the research question.
+\item
+  Follow these steps to help you model the data:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Identify the outcome variable and the predictors.
+  \item
+    Do you need to transform the variables and/or reorder levels?
+  \item
+    Identify the appropriate distribution for the outcome variable.
+  \item
+    Is an interaction term necessary?
+  \item
+    Do you need to centre any predictor?
+  \end{itemize}
+\end{itemize}
+
+\section{Results}\label{results}
+
+\textbf{Instructions}
+
+\begin{itemize}
+\tightlist
+\item
+  You should include at least two paragraphs.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    One reporting the model specifications (outcome, distribution of the
+    outcome, predictors, coding, \ldots)
+  \item
+    One reporting the results from the model. To simplify things, here
+    is some guidance. \textbf{Include at least the following}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      For each model coefficient (the ``population-level effects'' that
+      get printed with \texttt{summary()}), report the 95\% CrI and the
+      mean (\texttt{Estimate}) with the estimate error (i.e.~the SD,
+      \texttt{Est.error}) of the posterior probability of the
+      coefficient.
+    \item
+      For each combination of levels of categorical predictors, report
+      the 95\% CrI of the conditional posterior probability.
+    \item
+      If your model includes a numeric predictor, you don't need to
+      report conditional posterior probabilities depending on that
+      predictor, but you can just report the 95\% CrI of the conditional
+      posterior probabilities depending on levels of the categorical
+      predictor, \emph{when the continuous predictor is at its mean}.
+    \end{itemize}
+  \item
+    \textbf{Optional}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      If you wish, you can report the 95\% CrI of relevant differences
+      between levels/values of categorical/numeric predictors.
+    \end{itemize}
+  \end{enumerate}
+\item
+  Include plots of the posterior distributions of each coefficient and
+  the conditional posterior distributions.
+\end{itemize}
+
+\section{Discuss the results}\label{discuss-the-results}
+
+\textbf{Instructions}:
+
+\begin{itemize}
+\tightlist
+\item
+  Based on the results that you reported above, try and answer the
+  research question.
+\item
+  To give you an example of what we are looking for, here is a short
+  paragraph on interpreting the results from the Week 8 lecture on
+  morphological parsing.
+\end{itemize}
+
+\begin{quote}
+\emph{As suggested by the 95\% CrI of the interaction term (in log-odds
+{[}-1.72, 0.42{]}), there is quite a lot of uncertainty as to whether
+the difference in probability of correct response in unrelated vs
+constituent in right-branching pairs differs from that in left-branching
+pairs, since the interval covers both negative and positive values.
+Moreover, the conditional posterior probabilities of unrelated and
+right-branching on the one hand and constituent and right branching on
+the other are very similar, as can be seen in the plot above (and as
+suggested by the respective 95\% CrIs: 90-97\% vs 91-97\%
+respectively).}
+\end{quote}
+
+\end{document}

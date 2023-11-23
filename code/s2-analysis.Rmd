@@ -1,6 +1,6 @@
 ---
-title: "SQMB 2022/23 – Summative Assessment 2"
-author: "PUT YOUR EXAM NUMBER HERE"
+title: "QML – Summative Assessment 2"
+author: "YOUR EXAM NUMBER"
 date: "`r Sys.Date()`"
 output: 
   pdf_document: 
@@ -10,11 +10,10 @@ output:
     toc: true
 mainfont: Arial
 ---
-\newpage
 
 ```{r setup, include=FALSE}
 # PLEASE DON'T CHANGE THESE SETTINGS
-knitr::opts_chunk$set(echo = FALSE)  # This line hides all code in the output
+knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = here::here())
 
 library(tidyverse)
@@ -25,68 +24,68 @@ library(knitr)
 ```
 
 
-# Set-up instructions
+# Overview
 
-- **Before changing anything in this document, render it to PDF** to make sure that everything is rendered as it should be.
-  - If you receive the error `Error in library (knitr) : there is no package called 'knitr'`, then in the console, run `install.packages('knitr')` and try again.
-- Include your **exam number as the author** in the document preamble. 
-- Before you submit, delete the "Set-up instructions" and "Table and figure examples" sections. **Your submission should contain only your own work.**
+**PLEASE READ CAREFULLY**
+
+**DUE Week 12 - Thu 07 December at noon**
+
+- You must include your **exam number as the author** in the document preamble above.
+- Make sure you can render the Rmd file to PDF frequently while completing the assessment to avoid last minute panic!
+- Be careful with formatting. Make sure there is an empty line after each paragraph and/or code chunk.
+
+# Read the data
+
+**Instructions**:
+
+- Read the chosen data.
+- Write below a brief description about the data:
+  - Include the number of observations and the number of columns.
+  - Identify the variables/columns in the data that will be relevant to answer the research question, their type (categorical or numeric continuous/discrete) and, if categorical, report the levels of the variable.
+  - Report counts and/or summary measures of the relevant variables plus any other you think might be important to mention (for example, info about participants).
+
+# Plot the data
+
+**Instructions**:
+
+- Now plot the data as you see fit. Remember the research question of the chosen data to help you decide which plots to include.
+- For each plot, write a brief description as text (include information on the components of the plot like axes, colour, panels etc and briefly describe the patterns you see).
+- Plotting the data is a good way of familiarising yourself with it, so that when it comes to modelling you have a better sense of what the data looks like!
+- **Include at least 3 plots**.
+
+# Model the data
+
+**Instructions**
+
+- Finally, model the data and write a model report.
+- Pick a model formula that will help you answer the research question.
+- Follow these steps to help you model the data:
+  - Identify the outcome variable and the predictors.
+  - Do you need to transform the variables and/or reorder levels?
+  - Identify the appropriate distribution for the outcome variable.
+  - Is an interaction term necessary?
+  - Do you need to centre any predictor?
 
 
-Instructions for completing the assessment itself are given in `sqmb-s2/README.md`.
+# Results
 
+**Instructions**
 
-# Table and figure examples
+- You should include at least two paragraphs.
+  1. One reporting the model specifications (outcome, distribution of the outcome, predictors, coding, ...)
+  2. One reporting the results from the model. To simplify things, here is some guidance. **Include at least the following**:
+      - For each model coefficient (the "population-level effects" that get printed with `summary()`), report the 95% CrI and the mean (`Estimate`) with the estimate error (i.e. the SD, `Est.error`) of the posterior probability of the coefficient.
+      - For each combination of levels of categorical predictors, report the 95% CrI of the conditional posterior probability.
+      - If your model includes a numeric predictor, you don't need to report conditional posterior probabilities depending on that predictor, but you can just report the 95% CrI of the conditional posterior probabilities depending on levels of the categorical predictor, *when the continuous predictor is at its mean*.
+  3. **Optional**:
+      - If you wish, you can report the 95% CrI of relevant differences between levels/values of categorical/numeric predictors.
+- Include plots of the posterior distributions of each coefficient and the conditional posterior distributions.
 
-## How to present a data frame as a table with a caption
+# Discuss the results
 
-The first step is to create a data frame that contains only the information you want to display in the table.
-(Some helpful functions for modifying a data frame include tidyverse's `filter()` and `select()`.)
+**Instructions**:
 
-I'll illustrate this using R's built-in data frame `iris`.
-This data frame contains information about the shape and size of 150 different iris flowers, 50 each from three different species.
-Here, I'll create a table displaying only the first six rows of this data frame.
+- Based on the results that you reported above, try and answer the research question.
+- To give you an example of what we are looking for, here is a short paragraph on interpreting the results from the Week 8 lecture on morphological parsing.
 
-```{r setup-data-example}
-# Create the data frame that you'll display (I'm using head() to get the first six rows of iris).
-brief_iris <- head(iris)
-```
-
-Once your data frame is ready, it can be displayed using the function `kable()` from the library `knitr`.
-`kable()` takes in a data frame and converts it into a markdown table.
-Then, when the document is knit to PDF, this markdown table is rendered into a professional-looking table.
-
-`kable()` also has an argument `caption`.
-Use this argument to give the table a caption that describes for the reader what the table is showing.
-
-```{r table-example}
-# Use kable() to create the markdown table, and use the `caption` argument to add a caption to the table.
-kable(
-  brief_iris,
-  caption = 'Sepal and petal measurements in centimetres for six setosa irises.'
-)
-```
-
-
-## How to present a ggplot as a figure with a caption
-
-For illustration, I'll create a scatter plot that shows the association between the irises' petal width and petal length, with points coloured by species.
-
-Including a caption for a figure works a little differently than for a table: you have to include the text caption in the header of the code chunk.
-You can do this using the chunk option `fig.cap`.
-Have a look at the example in the code.
-
-```{r figure-example, fig.cap = 'Petal length in irises is positively associated with petal width. Setosas have the smallest petals, while those of versicolors and virginicas are larger.'}
-
-# Create the plot that will be shown along with the caption in the chunk's `fig.cap` option.
-iris %>% 
-  ggplot(aes(x = Petal.Length, y = Petal.Width, colour = Species)) +
-  labs(x = 'Petal length (cm)',
-       y = 'Petal width (cm)') +
-  geom_point()
-```
-
-More information about including tables and figures in your Rmarkdown document can be found here: <https://rmd4sci.njtierney.com/figures-tables-captions-.html>.
-
-(Don't worry if the tables or figures appear in a different place in the PDF than they do in the Rmd file.
-Tables and figures might "float" around a little, based on what the typesetting algorithm thinks looks best, and this is to be expected.)
+> *As suggested by the 95% CrI of the interaction term (in log-odds [-1.72, 0.42]), there is quite a lot of uncertainty as to whether the difference in probability of correct response in unrelated vs constituent in right-branching pairs differs from that in left-branching pairs, since the interval covers both negative and positive values. Moreover, the conditional posterior probabilities of unrelated and right-branching on the one hand and constituent and right branching on the other are very similar, as can be seen in the plot above (and as suggested by the respective 95% CrIs: 90-97% vs 91-97% respectively).*
