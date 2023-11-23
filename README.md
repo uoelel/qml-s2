@@ -28,7 +28,7 @@ Each dataset has its own little quirks and decisions to be made that are represe
 2. 🌶️ **BowermanSmith2022:** Are participants more likely to choose the correct object in the fixed associations condition or the random associations condition? How is this effect influenced by the experiment block?
 3. 🌶🌶️ **Grafmiller2023:** How does the use of 's'-genitives change from 1960 to 1990? How is this change influenced by the length of the possessum in the genitive NP?
 4. 🌶🌶 **Tucker2021:** How are reaction times affected by lexical status of the target (i.e., whether or not the target item is an English word)? How is this effect influenced by the number of phones in the target?
-5. 🌶🌶🌶 **Kirby:** Is F0 taken from the beginning of the vowel (time point 1) affected by the phonation (voiceless, voiced, aspirated) of the preceding consonant? Does the place of articulation of the consonant affect the effect of phonation?
+5. 🌶🌶🌶 **KirbyMisnadin2020:** Is F0 taken from the beginning of the vowel (time point 1) affected by the phonation (voiceless, voiced, aspirated) of the preceding consonant? Does the place of articulation of the consonant affect the effect of phonation?
 
 
 ## What do I need to report?
@@ -45,7 +45,7 @@ The model you should be fitting will look pretty similar to models we've worked 
 
 ## Any other questions?
 
-Ask on Piazza.
+You can ask questions on Piazza. If you are unsure about something you can also book office hours to discuss this. Of course, we can't give away answers but we can point you to the right direction if necessary.
 
 
 ## To submit your work
