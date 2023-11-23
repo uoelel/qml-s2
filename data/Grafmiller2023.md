@@ -22,12 +22,6 @@ From [Grafmiller (2023)](https://dataverse.no/dataset.xhtml?persistentId=doi:10.
 - `Possessum_Length`: The number of words in the possessum.
 
 
-## Dimensions
-
-- Rows: 3677
-- Columns: 11
-
-
 ## Source
 
 <https://dataverse.no/dataset.xhtml?persistentId=doi:10.18710/R7HM8J>

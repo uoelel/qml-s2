@@ -17,12 +17,6 @@ From [Tucker et al. (2019)](https://link.springer.com/article/10.3758/s13428-018
 - `NumPhones`: Number of phones in the item.
 
 
-## Dimensions
-
-- Rows: 20,000
-- Columns: 6
-
-
 ## Source
 
 <https://era.library.ualberta.ca/items/3344343b-2b4a-4b8c-af8e-8bd829c76472>

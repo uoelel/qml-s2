@@ -15,12 +15,6 @@ From [Ungerer (2020)](https://dataverse.no/dataset.xhtml?persistentId=doi:10.187
 - `rt`: Response time for word choice in milliseconds.
 
 
-## Dimensions
-
-- Rows: 12,409
-- Columns: 6
-
-
 ## Source
 
 <https://dataverse.no/dataset.xhtml?persistentId=doi:10.18710/2YJITD>

@@ -24,12 +24,6 @@ In contrast, in the random associations condition, every shape had a randomly ge
 - `rt`: How long it took participants to select an object in milliseconds.
 
 
-## Dimensions
-
-- Rows: 6848
-- Columns: 7
-
-
 ## Source
 
 <https://github.com/kennysmithed/SemanticExtension>
